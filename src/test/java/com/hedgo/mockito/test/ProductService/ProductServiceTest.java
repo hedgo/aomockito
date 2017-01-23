@@ -59,6 +59,14 @@ public class ProductServiceTest {
         //assertThat(user.getPassword(), is("xxxx"));		
 	}
 
+	@Test
+	public void testSumBasket2()
+	{
+        when(clientDAO.getAllProducts()).thenReturn(getAllProducts());			//mo¿na te¿ tak: stub(clientDAO.getAllProducts()).toReturn(getAllProducts());
+        int result = productService.sumBasket();
+		assertEquals(6,result);
+	}	
+	
 	private List<Product> getAllProducts()
 	{
 		List<Product> myProducts;
